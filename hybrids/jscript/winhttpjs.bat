@@ -379,6 +379,9 @@ function request(url) {
         if (escape) {
             WinHTTPObj.Option(3) = true;
         }
+        // ignore cert errors
+        WinHTTPObj.Option(4) = 13056;
+
         if (trim(body) === "") {
             WinHTTPObj.Send();
         } else {
